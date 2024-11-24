@@ -62,13 +62,13 @@ The app is designed with a focus on creating an attractive and user-friendly int
 ## Images of Components
 
 ### 1. Homepage - Recipe Search  
-![Recipe Search Homepage](/home.png)
+![Recipe Search Homepage](images/home.png)
 
 ### 2. Recipe Details Page  
-![Recipe Details](/details.png)
+![Recipe Details](images/details.png)
 
 ### 3. Saved Favorite Recipes  
-![Favorite Recipes](/favorite.png)
+![Favorite Recipes](images/favorites.png)
 
 ---
 
