@@ -85,7 +85,7 @@ function LandingPage() {
 
         
       </div>
-      {!debouncedSearch && (
+      {debouncedSearch && (
           <p className="text-white w-full text-2xl text-center">
             Start searching for recipes!
           </p>
