@@ -6,37 +6,42 @@ function LandingPage() {
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
-
   useEffect(() => {
     if (debouncedSearch) {
       const fetchRecipes = async () => {
+        setRecipes([]);
+        setError(null); // Clear any previous error before fetching
+  
         try {
           const response = await fetch(
             `https://api.spoonacular.com/recipes/complexSearch?query=${debouncedSearch}&number=10&apiKey=f59077f07dcf41128cfdaf29bfa042c9`
           );
-
+  
           const data = await response.json();
-
-          if (data.results && data.results.length>0) {
+  
+          if (data.results && data.results.length > 0) {
             setRecipes(data.results);
+            setError(null); 
           } else {
-            setRecipes([]);
-            setError("Failed to fetch recipes. Please try again later.");
+            setError("No recipes found. Try searching for something else!");
           }
         } catch (err) {
           setError("Failed to fetch recipes. Please try again later.");
           console.error(err);
         }
       };
-
+  
       fetchRecipes();
     } else {
       setRecipes([]);
+      setError(null); 
     }
   }, [debouncedSearch]);
+  
 
   const handleSearch = (e) => {
     setSearchItem(e.target.value);
+  
   };
 
   useEffect(() => {
@@ -71,7 +76,7 @@ function LandingPage() {
       </div>
 
       {/* Error Message */}
-      {debouncedSearch && error && (
+      {(recipes.length==0 ) && error && (
         <p className="text-red-500 text-center mb-4">{error}</p>
       )}
 
