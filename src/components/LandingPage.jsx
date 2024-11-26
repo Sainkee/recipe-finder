@@ -71,7 +71,7 @@ function LandingPage() {
       </div>
 
       {/* Error Message */}
-      {!debouncedSearch && error && (
+      {debouncedSearch && error && (
         <p className="text-red-500 text-center mb-4">{error}</p>
       )}
 
@@ -85,7 +85,7 @@ function LandingPage() {
 
         
       </div>
-      {debouncedSearch && (
+      {!debouncedSearch && (
           <p className="text-white w-full text-2xl text-center">
             Start searching for recipes!
           </p>
