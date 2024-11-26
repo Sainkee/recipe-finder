@@ -17,10 +17,11 @@ function LandingPage() {
 
           const data = await response.json();
 
-          if (data.results) {
+          if (data.results && data.results.length>0) {
             setRecipes(data.results);
           } else {
             setRecipes([]);
+            setError("Failed to fetch recipes. Please try again later.");
           }
         } catch (err) {
           setError("Failed to fetch recipes. Please try again later.");
