@@ -17,7 +17,7 @@ export default function LayOut() {
 
      
       <footer className="text-center py-4 bg-gray-100 border-t">
-        <p className="text-sm text-gray-500">© 2024 Your App Name. All rights reserved.</p>
+        <p className="text-sm text-gray-500">© 2024 Recipe finder. All rights reserved.</p>
       </footer>
     </div>
   );
