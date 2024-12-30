@@ -2,9 +2,12 @@ pipeline{
     any agent
 
     steges{
-        stage("hellow"){
-            echo  "hellow from git"
+        stage{
+            step("hellow"){
+                echo  "hellow from git"
+            }
         }
+       
     }
     
 }
