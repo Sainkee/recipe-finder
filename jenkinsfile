@@ -2,8 +2,8 @@ pipeline{
     any agent
 
     steges{
-        stage{
-            step("hellow"){
+        stage ("hellow"){
+            step{
                 echo  "hellow from git"
             }
         }
