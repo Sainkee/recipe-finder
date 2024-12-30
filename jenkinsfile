@@ -3,7 +3,7 @@ pipeline{
 
     stages{
         stage ("hellow"){
-            step{
+            steps{
                 echo  "hellow from git"
             }
         }
